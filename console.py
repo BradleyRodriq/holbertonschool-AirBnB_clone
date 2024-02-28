@@ -17,7 +17,7 @@ class HBNBCommand(cmd.Cmd):
     """command interpreter"""
 
     prompt = "(hbnb) "
-    classes = {
+    __classes = {
         "BaseModel": BaseModel,
         "User": User,
         "State": State,
@@ -46,9 +46,9 @@ class HBNBCommand(cmd.Cmd):
         """
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg not in HBNBCommand.classes:
+        elif arg not in HBNBCommand.__classes:
             print("** class doesn't exist **")
-        instance = self.classes[arg]()
+        instance = self.__classes[arg]()
         instance.save()
         print(instance.id)
 
@@ -58,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] not in HBNBCommand.classes:
+        elif args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -75,7 +75,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] not in HBNBCommand.classes:
+        elif args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] not in HBNBCommand.classes:
+        elif args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             instances = [str(obj) for key, obj in objdict.items() if key.split('.')[0] == args[0]]
@@ -102,9 +102,7 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_update(self, arg):
-        """Usage: update <class> <id> <attribute_name> <attribute_value> or
-    <class>.update(<id>, <attribute_name>, <attribute_value>) or
-    <class>.update(<id>, <dictionary>)
+        """
         Update a class instance of a given id by adding or updating
         a given attribute key/value pair or dictionary."""
         argl = arg.split()
@@ -113,7 +111,7 @@ class HBNBCommand(cmd.Cmd):
         if len(argl) == 0:
             print("** class name missing **")
             return False
-        if argl[0] not in HBNBCommand.classes:
+        if argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(argl) == 1:
