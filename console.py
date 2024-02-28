@@ -48,24 +48,107 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif arg not in HBNBCommand.classes:
             print("** class doesn't exist **")
-        else:
-            instance = self.classes[arg]()
-            instance.save
-            print(instance.id)
+        instance = self.classes[arg]()
+        instance.save()
+        print(instance.id)
 
     def do_show(self, arg):
         """Display string representation of a class instance"""
         objdict = storage.all()
-        if len(arg) == 0:
+        args = arg.split()
+        if len(args) == 0:
             print("** class name missing **")
-        elif arg not in HBNBCommand.classes:
-            print("** class doesn't exist")
-        elif len(arg) == 1:
+        elif args[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
             print("** instance id missing **")
-        elif "{}.{}".format(arg[1], arg[2]) not in objdict:
-            print("** no instance found **")
         else:
-            print(objdict["{}.{}".format(arg[0], arg[1])])
+            key = "{}.{}".format(args[0], args[1])
+            if key not in objdict:
+                print("** no instance found **")
+            else:
+                print(objdict[key])
+
+    def do_destroy(self, arg):
+        """Delete a class instance"""
+        objdict = storage.all()
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(args[0], args[1])
+            if key not in objdict.keys():
+                print("** no instance found **")
+            else:
+                del objdict[key]
+                storage.save()
+
+
+    def do_all(self, arg):
+        """Display string representation of all instances"""
+        objdict = storage.all()
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+        else:
+            instances = [str(obj) for key, obj in objdict.items() if key.split('.')[0] == args[0]]
+            print(instances)
+
+
+    def do_update(self, arg):
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
+    <class>.update(<id>, <attribute_name>, <attribute_value>) or
+    <class>.update(<id>, <dictionary>)
+        Update a class instance of a given id by adding or updating
+        a given attribute key/value pair or dictionary."""
+        argl = arg.split()
+        objdict = storage.all()
+
+        if len(argl) == 0:
+            print("** class name missing **")
+            return False
+        if argl[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return False
+        if len(argl) == 1:
+            print("** instance id missing **")
+            return False
+        if "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
+            print("** no instance found **")
+            return False
+        if len(argl) == 2:
+            print("** attribute name missing **")
+            return False
+        if len(argl) == 3:
+            try:
+                type(eval(argl[2])) != dict
+            except NameError:
+                print("** value missing **")
+                return False
+
+        if len(argl) == 4:
+            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            if argl[2] in obj.__class__.__dict__.keys():
+                valtype = type(obj.__class__.__dict__[argl[2]])
+                obj.__dict__[argl[2]] = valtype(argl[3])
+            else:
+                obj.__dict__[argl[2]] = argl[3]
+        elif type(eval(argl[2])) == dict:
+            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            for k, v in eval(argl[2]).items():
+                if (k in obj.__class__.__dict__.keys() and
+                        type(obj.__class__.__dict__[k]) in {str, int, float}):
+                    valtype = type(obj.__class__.__dict__[k])
+                    obj.__dict__[k] = valtype(v)
+                else:
+                    obj.__dict__[k] = v
+        storage.save()
 
 
 if __name__ == '__main__':
