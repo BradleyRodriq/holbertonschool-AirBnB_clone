@@ -87,7 +87,6 @@ class HBNBCommand(cmd.Cmd):
                 del objdict[key]
                 storage.save()
 
-
     def do_all(self, arg):
         """Display string representation of all instances"""
         objdict = storage.all()
@@ -97,9 +96,9 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
-            instances = [str(obj) for key, obj in objdict.items() if key.split('.')[0] == args[0]]
+            instances = [str(obj) for key, obj in objdict.items()
+                         if key.split('.')[0] == args[0]]
             print(instances)
-
 
     def do_update(self, arg):
         """
