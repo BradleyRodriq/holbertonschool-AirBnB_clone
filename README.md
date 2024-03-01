@@ -1,8 +1,7 @@
 ## AirBnB Project: The Console 
 
 
-![1_lqEaA1-6gGQhdLS3k8X0xw](https://user-images.githubusercontent.com/31927278/182706961-e087c64e-9d7b-40db-a931-67009dc34089.gif)
-
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
 
 ## General
 - Allowed editors: vi, vim, emacs
@@ -58,19 +57,19 @@ to_dict(): Returns a dictionary representation of the BaseModel instance, includ
          ./console.py
 
 ## Object Manipulation Commands
-create <class_name>: Create a new instance of the specified class.
-show <class_name> <instance_id>: Display information about the specified instance.
-destroy <class_name> <instance_id>: Delete the specified instance.
-all [class_name]: Display information about all instances or instances of a specific class.
-update <class_name> <instance_id> <attribute_name> "<new_value>": Update the specified attribute of the specified instance.
+- create <class_name>: Create a new instance of the specified class.
+- show <class_name> <instance_id>: Display information about the specified instance.
+- destroy <class_name> <instance_id>: Delete the specified instance.
+- all [class_name]: Display information about all instances or instances of a specific class.
+- update <class_name> <instance_id> <attribute_name> "<new_value>": Update the specified attribute of the specified instance.
 ## Supported Classes
-BaseModel: The base class for all other classes.
-User: Represents a user.
-State: Represents a state.
-City: Represents a city.
-Place: Represents a place.
-Amenity: Represents an amenity.
-Review: Represents a review.#Supported Classes
+- BaseModel: The base class for all other classes.
+- User: Represents a user.
+- State: Represents a state.
+- City: Represents a city.
+- Place: Represents a place.
+- Amenity: Represents an amenity.
+- Review: Represents a review.#Supported Classes
 
 ## Authors
 
