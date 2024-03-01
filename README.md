@@ -1,7 +1,6 @@
 ## AirBnB Project: The Console 
 
-
-<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
+<img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240301%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20240301T212726Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=0e1d990db2e269584992900db6e21f870bbf430ae785a34491cdbb9faebd714e" alt="" loading="lazy" style="">
 
 ## General
 - Allowed editors: vi, vim, emacs
