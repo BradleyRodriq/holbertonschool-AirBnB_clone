@@ -13,13 +13,21 @@ The project currently only implements the back-end console.
 
 HBnB utilizes the following classes:
 
+
 BaseModel: attributes: id, created_at, updated_at, save, to_dict
+
 FileStorage: all, new, save, reload
+
 User: inherits from BaseModel.  attributes: first_name, last_name, email
+
 State: inherits from BaseModel. attrubutes: name
+
 City: inherits from BaseModel. attributes: state_id, name
+
 Amenity: inherits from BaseModel. attributes: name
+
 Place: inherits from BaseModel. attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
+
 Review: inherits from BaseModel. attributes: place_id, user_id, text
 
 ## Storage
