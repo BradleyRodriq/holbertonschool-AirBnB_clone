@@ -15,27 +15,28 @@ HBnB utilizes the following classes:
 
 
 [BaseModel](./models/base_model.py):
-Attributes: id, created_at, updated_at, save, to_dict
+*Attributes: id, created_at, updated_at, save, to_dict
 
-[FileStorage](./models/engine/file_storage.py): all, new, save, reload
+[FileStorage](./models/engine/file_storage.py)
+*Attributes: all, new, save, reload
 
 [User](./models/user.py): inherits from [BaseModel](/models/base_model.py).
-Attributes: first_name, last_name, email
+*Attributes: first_name, last_name, email
 
 [State](./models/state.py): inherits from [BaseModel](./models/base_model.py).
-Attrubutes: name
+*Attrubutes: name
 
 [City](./models/city.py): inherits from [BaseModel](./models/base_model.py).
-Attributes: state_id, name
+*Attributes: state_id, name
 
 [Amenity](./models/amenity.py): inherits from [BaseModel](./models/base_model.py).
-Attributes: name
+*Attributes: name
 
 [Place](./models/place.py): inherits from [BaseModel](./models/base_model.py).
-Attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
+*Attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
 
 [Review](./models/review.py): inherits from [BaseModel](./models/base_model.py).
-Attributes: place_id, user_id, text
+*Attributes: place_id, user_id, text
 
 ## Storage
 
