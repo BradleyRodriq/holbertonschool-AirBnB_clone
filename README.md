@@ -3,13 +3,13 @@
 
 ---
 
-## Description :house:
+## Description
 
 HBnB is a clone of the popular AirBnB website.
 
 The project currently only implements the back-end console.
 
-## Classes :cl:
+## Classes
 
 HBnB utilizes the following classes:
 
@@ -22,7 +22,7 @@ Amenity: inherits from BaseModel. attributes: name
 Place: inherits from BaseModel. attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
 Review: inherits from BaseModel. attributes: place_id, user_id, text
 
-## Storage :baggage_claim:
+## Storage
 
 The above classes are handled by the abstracted storage engine defined in the
 [FileStorage](./models/engine/file_storage.py) class.
