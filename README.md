@@ -1,6 +1,6 @@
 ## AirBnB Project: The Console 
 
-<img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240301%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20240301T212726Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=0e1d990db2e269584992900db6e21f870bbf430ae785a34491cdbb9faebd714e" alt="" loading="lazy" style="">
+<img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240301%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20240301T212726Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=0e1d990db2e269584992900db6e21f870bbf430ae785a34491cdbb9faebd714e" >
 
 ## General
 - Allowed editors: vi, vim, emacs
