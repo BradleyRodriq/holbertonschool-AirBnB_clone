@@ -48,7 +48,7 @@ any class instances stored in the JSON file `file.json`. As class instances are
 created, updated, or deleted, the `storage` object is used to register
 corresponding changes in the `file.json`.
 
-## Console :computer:
+## Console
 
 The console is a command line interpreter that permits management of the backend
 of HBnB.
