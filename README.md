@@ -14,21 +14,28 @@ The project currently only implements the back-end console.
 HBnB utilizes the following classes:
 
 
-BaseModel: attributes: id, created_at, updated_at, save, to_dict
+[BaseModel](./models/base_model.py):
+Attributes: id, created_at, updated_at, save, to_dict
 
-FileStorage: all, new, save, reload
+[FileStorage](./models/engine/file_storage.py): all, new, save, reload
 
-User: inherits from BaseModel.  attributes: first_name, last_name, email
+[User](./models/user.py): inherits from [BaseModel](/models/base_model.py).
+Attributes: first_name, last_name, email
 
-State: inherits from BaseModel. attrubutes: name
+[State](./models/state.py): inherits from [BaseModel](./models/base_model.py).
+Attrubutes: name
 
-City: inherits from BaseModel. attributes: state_id, name
+[City](./models/city.py): inherits from [BaseModel](./models/base_model.py).
+Attributes: state_id, name
 
-Amenity: inherits from BaseModel. attributes: name
+[Amenity](./models/amenity.py): inherits from [BaseModel](./models/base_model.py).
+Attributes: name
 
-Place: inherits from BaseModel. attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
+[Place](./models/place.py): inherits from [BaseModel](./models/base_model.py).
+Attributes: name, city_id, user_id, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
 
-Review: inherits from BaseModel. attributes: place_id, user_id, text
+[Review](./models/review.py): inherits from [BaseModel](./models/base_model.py).
+Attributes: place_id, user_id, text
 
 ## Storage
 
